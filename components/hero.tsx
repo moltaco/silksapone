@@ -11,6 +11,7 @@ const soapImages = [
 ]
 
 const scrollingSoaps = Array.from({ length: 8 }, () => soapImages).flat()
+const soapSize = "clamp(250px, min(64vw, 43vh), 620px)"
 
 export function Hero() {
   const [scrollY, setScrollY] = useState(0)
@@ -65,8 +66,12 @@ export function Hero() {
             {scrollingSoaps.map((src, index) => (
               <div
                 key={`${src}-${index}`}
-                className="relative h-[250px] w-[250px] shrink-0 sm:h-[330px] sm:w-[330px] md:h-[440px] md:w-[440px] lg:h-[540px] lg:w-[540px] xl:h-[620px] xl:w-[620px]"
-                style={{ transform: `rotate(${index % 2 === 0 ? 9 : -7}deg)` }}
+                className="relative shrink-0"
+                style={{
+                  width: soapSize,
+                  height: soapSize,
+                  transform: `rotate(${index % 2 === 0 ? 9 : -7}deg)`,
+                }}
               >
                 <Image
                   src={src}
@@ -74,7 +79,7 @@ export function Hero() {
                   fill
                   className="object-contain drop-shadow-2xl"
                   loading="eager"
-                  sizes="(min-width: 1280px) 620px, (min-width: 1024px) 540px, (min-width: 768px) 440px, (min-width: 640px) 330px, 250px"
+                  sizes="(min-width: 640px) min(64vw, 43vh), 250px"
                 />
               </div>
             ))}
@@ -88,17 +93,17 @@ export function Hero() {
       />
 
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 z-[8] h-40 bg-gradient-to-b from-foreground/65 via-foreground/30 to-transparent md:hidden"
+        className="pointer-events-none absolute inset-x-0 top-0 z-[8] h-40 bg-gradient-to-b from-foreground/65 via-foreground/30 to-transparent md:h-48 md:from-foreground/55 md:via-foreground/20"
         aria-hidden="true"
       />
 
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-[8] h-[74%] bg-gradient-to-t from-foreground via-foreground/78 to-transparent backdrop-blur-[1px] md:hidden"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[8] h-[74%] bg-gradient-to-t from-foreground via-foreground/78 to-transparent backdrop-blur-[1px] md:h-[68%] md:via-foreground/52 md:backdrop-blur-0"
         aria-hidden="true"
       />
 
       <div
-        className="relative z-10 h-full flex flex-col justify-end pb-20 md:pb-28 px-6 md:px-12 lg:px-20 will-change-transform [text-shadow:0_2px_22px_rgba(0,0,0,0.42)] md:[text-shadow:none]"
+        className="relative z-10 h-full flex flex-col justify-end pb-20 md:pb-28 px-6 md:px-12 lg:px-20 will-change-transform [text-shadow:0_2px_22px_rgba(0,0,0,0.42)]"
         style={{
           transform: `translate3d(0, ${textY * -0.5}px, 0)`,
           opacity: fadeOpacity,

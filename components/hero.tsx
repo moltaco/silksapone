@@ -88,7 +88,17 @@ export function Hero() {
       />
 
       <div
-        className="relative z-10 h-full flex flex-col justify-end pb-20 md:pb-28 px-6 md:px-12 lg:px-20 will-change-transform"
+        className="pointer-events-none absolute inset-x-0 top-0 z-[8] h-40 bg-gradient-to-b from-foreground/65 via-foreground/30 to-transparent md:hidden"
+        aria-hidden="true"
+      />
+
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[8] h-[74%] bg-gradient-to-t from-foreground via-foreground/78 to-transparent backdrop-blur-[1px] md:hidden"
+        aria-hidden="true"
+      />
+
+      <div
+        className="relative z-10 h-full flex flex-col justify-end pb-20 md:pb-28 px-6 md:px-12 lg:px-20 will-change-transform [text-shadow:0_2px_22px_rgba(0,0,0,0.42)] md:[text-shadow:none]"
         style={{
           transform: `translate3d(0, ${textY * -0.5}px, 0)`,
           opacity: fadeOpacity,
@@ -111,7 +121,7 @@ export function Hero() {
           <div className="mt-10">
             <a
               href="#collection"
-              className="inline-flex items-center justify-center bg-background text-foreground px-8 py-4 text-xs uppercase tracking-[0.3em] hover:bg-primary transition-colors duration-300"
+              className="inline-flex items-center justify-center bg-background text-foreground px-8 py-4 text-xs uppercase tracking-[0.3em] hover:bg-primary transition-colors duration-300 [text-shadow:none]"
             >
               Discover the Collection
             </a>

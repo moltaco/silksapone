@@ -114,9 +114,7 @@ export function Hero() {
             Est. 2026 — Small Batch, Slow Crafted
           </p>
           <h1 className="font-serif text-background text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[8.5rem] leading-[0.95] tracking-tight font-light text-balance">
-            The  
-            <br />
-            <em className="italic font-light text-primary">essence</em> of elegance.
+            The <em className="italic font-light text-primary">essence</em> of elegance.
           </h1>
           <p className="mt-8 md:mt-10 text-background/80 text-base md:text-lg max-w-xl leading-relaxed font-light">
             Silk Sapone is a botanical soap house rooted in patience. Each bar is

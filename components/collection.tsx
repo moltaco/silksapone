@@ -69,30 +69,30 @@ export function Collection() {
   return (
     <section
       id="collection"
-      className="relative py-24 md:py-40 transition-colors duration-700 overflow-hidden"
+      className="relative min-h-dvh lg:flex lg:items-center py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20 transition-colors duration-700 overflow-hidden"
       style={{ backgroundColor: current.bg }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-24">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-8 md:mb-10">
           <div>
-            <p className="text-xs uppercase tracking-[0.4em] text-foreground/60 mb-4">
+            <p className="text-xs uppercase tracking-[0.4em] text-foreground/60 mb-3">
               — The Collection
             </p>
-            <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[0.95] font-light text-balance">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] font-light text-balance">
               Four bars,
               <br />
               <em className="italic">four moods.</em>
             </h2>
           </div>
-          <p className="text-foreground/70 max-w-sm font-light leading-relaxed">
+          <p className="text-sm md:text-base text-foreground/70 max-w-sm font-light leading-relaxed">
             Every Silk Sapone bar weighs 110g, lasts six weeks of daily use, and
             arrives wrapped in unbleached paper.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 xl:gap-14 items-center">
           <div className="lg:col-span-7 relative">
-            <div className="relative aspect-square max-w-[480px] mx-auto">
+            <div className="relative aspect-square max-w-[240px] sm:max-w-[320px] lg:max-w-[360px] xl:max-w-[400px] mx-auto">
               {soaps.map((soap, i) => (
                 <div
                   key={soap.id}
@@ -114,7 +114,7 @@ export function Collection() {
               ))}
               <p
                 key={current.italian}
-                className="absolute -top-6 md:-top-10 left-1/2 -translate-x-1/2 font-serif italic text-foreground/10 text-[20vw] lg:text-[14rem] leading-none pointer-events-none select-none whitespace-nowrap"
+                className="absolute -top-5 md:-top-8 left-1/2 -translate-x-1/2 font-serif italic text-foreground/10 text-[18vw] lg:text-[10rem] xl:text-[12rem] leading-none pointer-events-none select-none whitespace-nowrap"
               >
                 {current.italian}
               </p>
@@ -122,41 +122,41 @@ export function Collection() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="border-t border-foreground/20 pt-8">
-              <p className="font-serif italic text-foreground/60 text-lg mb-2">
+            <div className="border-t border-foreground/20 pt-5 md:pt-6">
+              <p className="font-serif italic text-foreground/60 text-base md:text-lg mb-1">
                 {current.italian}
               </p>
-              <h3 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-6">
+              <h3 className="font-serif text-3xl md:text-4xl xl:text-5xl font-light leading-tight mb-3 md:mb-4">
                 {current.name}
               </h3>
-              <p className="text-foreground/75 leading-relaxed mb-6 font-light">
+              <p className="text-sm md:text-base text-foreground/75 leading-relaxed mb-4 md:mb-5 font-light">
                 {current.description}
               </p>
-              <div className="space-y-3 text-sm border-t border-foreground/15 pt-6">
+              <div className="space-y-2 text-sm border-t border-foreground/15 pt-4 md:pt-5">
                 <DetailRow label="Notes" value={current.notes} />
                 <DetailRow label="Weight" value="110 g" />
                 <DetailRow label="Cure" value="48 hours" />
               </div>
-              <div className="mt-10">
-                <div className="flex items-baseline gap-4 mb-4">
-                  <p className="font-serif text-3xl">{current.price}</p>
+              <div className="mt-6 md:mt-7">
+                <div className="flex items-baseline gap-4 mb-3">
+                  <p className="font-serif text-2xl md:text-3xl">{current.price}</p>
                   <p className="text-foreground/60 text-sm">or 2 for £8</p>
                 </div>
                 <button
                   type="button"
-                  className="w-full bg-foreground text-background py-4 text-xs uppercase tracking-[0.3em] hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+                  className="w-full bg-foreground text-background py-3 md:py-3.5 text-xs uppercase tracking-[0.3em] hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
                 >
                   Add to Basket
                 </button>
               </div>
             </div>
 
-            <div className="mt-12 flex gap-3">
+            <div className="mt-6 md:mt-8 flex gap-3">
               {soaps.map((soap, i) => (
                 <button
                   key={soap.id}
                   onClick={() => setActive(i)}
-                  className="flex-1 group relative py-4 text-left transition-all duration-300"
+                  className="flex-1 group relative py-2.5 md:py-3 text-left transition-all duration-300"
                   aria-label={`View ${soap.name}`}
                 >
                   <div
@@ -167,7 +167,7 @@ export function Collection() {
                   />
                   <p
                     className={cn(
-                      "mt-3 text-[10px] uppercase tracking-[0.25em] transition-colors duration-300",
+                      "mt-2 text-[10px] uppercase tracking-[0.25em] transition-colors duration-300",
                       i === active ? "text-foreground" : "text-foreground/50",
                     )}
                   >
